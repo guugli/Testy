@@ -6,4 +6,4 @@ before_install:
   - docker build -t guugli/testy -f Dockerfile.dev .
 
 script:
-  - docker run guugli/testy npm run test -- --coverage
+  - docker run -e CI=true guugli/testy npm run test -- --coverage
