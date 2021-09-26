@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t guugli/Testy -f Dockerfile.dev .
+
+script:
+  - docker run guugli/Testy npm run test -- --coverage
